@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>p8_layoutweb</title>
+    <style>
+        /*PC*/
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .container{
+            width: 100vw;
+            height: 100vh;
+            display: grid;
+            row-gap: 0.5em;
+            column-gap: 0.5em;
+            grid-template-columns: auto auto auto auto auto auto;
+            grid-template-rows: 12.5% 25% 50% 12.5%;
+        }
+        nav{
+            grid-column-start: 1;
+            grid-column-end: 7;
+            background-color: #D1B7FE ;
+        }
+        header{
+            grid-column: 1 / 7;
+            background-color: #5D41A7;
+        }
+        main{
+            grid-column: 1 / 6;
+            background-color: #7C4DFF;
+        }
+        aside{
+            grid-column: 6 / 7;
+            background-color: #A98AFF;
+        }
+        footer{
+            grid-column: 1 / 7;
+            background-color: #45289F;
+        }
+        /*IPAD*/
+        @media only screen and (max-width: 832px){
+            .container {
+                grid-template-columns:repeat(4,25%) ;
+                grid-template-rows: 6,66% 26,64% 33.3% 13.32% 19,98%;
+            }
+            nav,header,main,aside,footer{
+                grid-column: 1 / 5;
+            }
+        }
+    /*MÓVIL*/
+        @media only screen and (max-width: 375px){
+            .container {
+                grid-template-columns: auto auto;
+                grid-template-rows: 10% 30% 30% 20% 10%;
+
+            }
+        }
+    </style>
+</head>
+<body>
+   <div class="container">
+    <nav>
+        <p>menu nav</p>
+    </nav>
+    <header>
+        <p>header</p>
+    </header>
+    <main>
+        <p>main content</p>
+    </main>
+    <aside>
+        <p>aside</p>
+    </aside>
+    <footer>
+        <p>footer</p>
+    </footer>
+   </div>
+</body>
+</html>
